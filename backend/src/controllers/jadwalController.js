@@ -99,7 +99,7 @@ const updateJadwal = async (req, res) => {
     }
 
     await db.query(
-      "UPDATE glbm_jadwal SET hari = $1, jam_masuk = $2, jam_keluar = $3 WHERE id = $4 RETURNING *",
+      "UPDATE glbm_jadwal SET hari = $1, jam_masuk = $2, jam_keluar = $3 WHERE id = $4",
       [hari, jam_masuk, jam_keluar, id]
     );
 

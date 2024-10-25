@@ -50,7 +50,7 @@ const saveJabatan = async (req, res) => {
     }
 
     const { rows } = await db.query(
-      "INSERT INTO glbm_jabatan (nama) VALUES ($1) RETURNING *",
+      "INSERT INTO glbm_jabatan (nama) VALUES ($1)",
       [nama_jabatan]
     );
 
@@ -101,7 +101,7 @@ const updateJabatan = async (req, res) => {
     }
 
     await db.query(
-      "UPDATE glbm_jabatan SET nama = $1 WHERE id = $2 RETURNING *",
+      "UPDATE glbm_jabatan SET nama = $1 WHERE id = $2 ",
       [nama_jabatan, id]
     );
 
