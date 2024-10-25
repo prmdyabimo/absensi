@@ -11,7 +11,7 @@ const getJadwal = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    return res.status(200).json({
+    return res.status(500).json({
       status: "failed",
       code: 500,
       message: "Internal server error",
@@ -62,7 +62,7 @@ const saveJadwal = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    return res.status(200).json({
+    return res.status(500).json({
       status: "failed",
       code: 500,
       message: "Internal server error",

@@ -25,7 +25,7 @@ const saveJabatan = async (req, res) => {
   const { nama_jabatan } = req.body;
 
   if (!nama_jabatan) {
-    return res.status(400).json({
+    return res.status(200).json({
       status: "failed",
       code: 400,
       message: "Nama jabatan harus diisi",
@@ -41,7 +41,7 @@ const saveJabatan = async (req, res) => {
     ]);
 
     if (jabatan) {
-      return res.status(400).json({
+      return res.status(200).json({
         status: "failed",
         code: 400,
         message: "Nama jabatan sudah ada",
@@ -78,7 +78,7 @@ const updateJabatan = async (req, res) => {
   const { nama_jabatan } = req.body;
 
   if (!nama_jabatan) {
-    return res.status(400).json({
+    return res.status(200).json({
       status: "failed",
       code: 400,
       message: "Nama jabatan harus diisi",
@@ -92,7 +92,7 @@ const updateJabatan = async (req, res) => {
     } = await db.query("SELECT * FROM glbm_jabatan WHERE id = $1", [id]);
 
     if (!jabatan) {
-      return res.status(404).json({
+      return res.status(200).json({
         status: "failed",
         code: 404,
         message: "Jabatan tidak ditemukan",
@@ -133,7 +133,7 @@ const deleteJabatan = async (req, res) => {
     } = await db.query("SELECT * FROM glbm_jabatan WHERE id = $1", [id]);
 
     if (!jabatan) {
-      return res.status(404).json({
+      return res.status(200).json({
         status: "failed",
         code: 404,
         message: "Jabatan tidak ditemukan",
