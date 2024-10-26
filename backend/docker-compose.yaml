@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db-dev:
+    container_name: absensi-db
+    restart: always
+    image: postgres:16.1-alpine
+    ports:
+      - 54321:5432 
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin@12345
+      - POSTGRES_DB=db_absensi
+    networks:
+      - testing-networks
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  adminer:
+    container_name: absensi-adminer
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8081:8080
+    networks:
+      - testing-networks
+    depends_on:
+      - db-dev
+
+networks:
+  testing-networks:
+    driver: bridge
+
+volumes:
+  db_data: {}

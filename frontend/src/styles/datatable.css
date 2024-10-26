@@ -1,0 +1,52 @@
+/* datatable.css */
+
+/* Gaya untuk tabel */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dataTable thead th {
+    background-color: #f3f4f6;
+    /* Warna latar belakang untuk header */
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+    /* Garis bawah untuk header */
+}
+
+.dataTable tbody tr {
+    background-color: #ffffff;
+    /* Warna latar belakang untuk baris */
+}
+
+.dataTable tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+    /* Warna latar belakang untuk baris genap */
+}
+
+.dataTable tbody td {
+    padding: 1rem;
+    /* Padding untuk sel */
+    border-bottom: 1px solid #e5e7eb;
+    /* Garis bawah untuk sel */
+}
+
+/* Gaya untuk tombol pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    /* Rounded corners */
+    background-color: #ffffff;
+    /* Warna latar belakang */
+    color: #374151;
+    /* Warna teks */
+    transition: background-color 0.3s;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #d1fae5;
+    /* Warna saat hover */
+}
